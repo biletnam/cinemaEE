@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateSnackTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateSnackLabel_snackId}" for="snackId" />
+                    <h:inputText id="snackId" value="#{snackController.selected.snackId}" title="#{bundle.CreateSnackTitle_snackId}" required="true" requiredMessage="#{bundle.CreateSnackRequiredMessage_snackId}"/>
+                    <h:outputLabel value="#{bundle.CreateSnackLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{snackController.selected.nombre}" title="#{bundle.CreateSnackTitle_nombre}" />
+                    <h:outputLabel value="#{bundle.CreateSnackLabel_tamano}" for="tamano" />
+                    <h:inputText id="tamano" value="#{snackController.selected.tamano}" title="#{bundle.CreateSnackTitle_tamano}" />
+                    <h:outputLabel value="#{bundle.CreateSnackLabel_precio}" for="precio" />
+                    <h:inputText id="precio" value="#{snackController.selected.precio}" title="#{bundle.CreateSnackTitle_precio}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{snackController.create}" value="#{bundle.CreateSnackSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{snackController.prepareList}" value="#{bundle.CreateSnackShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateSnackIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

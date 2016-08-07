@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Cartelera</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body style= 'background: url(./images/Cinema.jpg); background-position: center, center; background-size: cover;'>
+        <h:form>
+            <p:graphicImage  height="300" width="600" value="./images/snack.png" style="margin-left: -20; margin-top: 1" /> 
+            <div id="texto" style="width: 60%;height: 100px; float: right;margin: 20px; margin-top: 160px;margin-right: 50px">
+                <h:outputText value="Reserva tus boletos y snacks favoritos desde la comodidad de tu casa" style="font-size: 1.5em;width: 900px;height: 100px; color: white;font-weight: bold;font-style: oblique"></h:outputText>
+            </div>
+
+            <div id="pantalla" style="width: 90%; border: 20%;margin: auto">
+                <div id="menu" style=" float: left; ;margin: auto; margin:20px; background-color:  #00b386; margin-bottom: 100px">
+                    <p:breadCrumb style=" background-color: #ffffe6; margin-top: 5px;">
+                        <p:menuitem value="Categories" url=""/>
+                        <p:menuitem value="Home" url="./index.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px"/>
+                        <p:menuitem value="Cartelera" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;;margin-top: 9px  "   />
+                        <p:menuitem value="Próximos estrenos" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;;margin-top: 9px   " />
+                        <p:menuitem value="Snacks disponibles" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px ;margin-top: 9px  "  />
+                        <p:menuitem value="Quienes somos"     url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px   " />
+                    </p:breadCrumb>
+                </div> 
+
+                <h:form style="margin-top: 50px; ">
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:fieldset legend="Infantil" style="margin-top:50px; width: 85%;margin-left: 15px">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:graphicImage name="Cart_431.jpg"  library="images/peliculas"/>
+                            <h:outputText
+                                value="Sinopsis: Hugo el fantasma travieso, basada en la primera novela de Cornelia Funke nos guía por la vida de Tom, 
+                                un niño asustadizo, que tiene a toda su familia preocupada por la manera en la que se enfrenta al mundo, luego 
+                                tenemos a Hugo un fantasma un tanto torpe y por ultimo está Hetty, una cazadora de fantasmas profesional.
+                                Este trío unirá fuerzas para enfrentarse a un fantasma milenario de hielo, el cual traerá muchas desventuras 
+                                a nuestros personajes." />
+                        </h:panelGrid>
+                    </p:fieldset>
+
+
+                </h:form>
+
+                <h:form style="margin-top: 50px; ">
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:fieldset legend="Infantil" style="margin-top:50px; width: 85%;margin-left: 15px">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:graphicImage name="Cart_579.jpg"  library="images/peliculas"/>
+                            <h:outputText
+                                value="Sinopsis:                                                    
+                                En la nueva historia veremos a Scrat y su mítica bellota en el espacio, donde accidentalmente desencadenará una 
+                                serie de acontecimientos que amenazarán la Edad de Hielo. Para salvarse, Sid, Manny, Diego y el resto de la manada 
+                                deberán salir de su hogar y embarcarse en una aventura llena de comedia y aventuras, viajando por tierras exóticas 
+                                donde se encontrarán con nuevos y peculiares personajes." />
+                        </h:panelGrid>
+                    </p:fieldset>
+
+
+                </h:form>
+
+                 <h:form style="margin-top: 50px; ">
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:fieldset legend="Acción" style="margin-top:50px; width: 85%;margin-left: 15px">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:graphicImage name="Cart_588.jpg"  library="images/peliculas"/>
+                            <h:outputText
+                                value="Sinopsis:                                                    
+                               Han pasado años desde que el hombre una vez conocido como Tarzán dejara atrás las junglas de África para vivir una 
+                               vida burguesa como John Clayton III, Lord Greystoke, con su amada esposa, Jane a su lado. Y ahora, le han invitado 
+                               a volver al Congo para servir como emisario comercial del Parlamento, desconociendo que es un peón en una terrible 
+                               encrucijada de avaricia y venganza planeada por el Capitán belga Leon Rom. Pero aquellos detrás de la trama homicida
+                               no tienen ni idea de lo que están a punto de desencadenar." />
+                        </h:panelGrid>
+                    </p:fieldset>
+
+
+                </h:form>
+                
+                  <h:form style="margin-top: 50px; ">
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:fieldset legend="Terror" style="margin-top:50px; width: 85%;margin-left: 15px">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:graphicImage name="Cart_563.jpg"  library="images/peliculas"/>
+                            <h:outputText
+                                value="Sinopsis:                                                    
+                              Del productor James Wan (El Conjuro) llega una historia de terror desconocido que acecha en la oscuridad.
+                              Cuando Rebecca dejó su hogar, ella pensó que había dejado atrás sus temores de la infancia. En su infancia, 
+                              ella nunca estaba \br segura de lo que era y no era real cuando se apagaban las luces... y ahora su pequeño hermano 
+                              Martin, está experimentando los mismos acontecimientos inexplicables y aterradores que habían probado su cordura 
+                              y amenazado su seguridad. Una aterradora entidad con un misterioso apego a su madre, Sophie, ha resurgido.
+                              Pero esta vez, como Rebecca esta más cerca de descubrir la verdad, no se puede negar que sus vidas están en peligro... una vez que se apagan las luces.
+                              La película es protagonizada por Teresa Palmer como Rebecca; Gabriel Bateman como Martin; Billy Burke como Paul, 
+                              el padre de Martin; Alexander DiPersia como Bret, el novio de Rebecca; y Maria Bello como Sophie. " />
+                        </h:panelGrid>
+                    </p:fieldset>
+
+
+                </h:form>
+
+            </div>
+        </h:form>
+    </h:body>
+</html>
+

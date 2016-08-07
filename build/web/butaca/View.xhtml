@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewButacaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewButacaLabel_butacaId}"/>
+                    <h:outputText value="#{butacaController.selected.butacaId}" title="#{bundle.ViewButacaTitle_butacaId}"/>
+                    <h:outputText value="#{bundle.ViewButacaLabel_numButaca}"/>
+                    <h:outputText value="#{butacaController.selected.numButaca}" title="#{bundle.ViewButacaTitle_numButaca}"/>
+                    <h:outputText value="#{bundle.ViewButacaLabel_fila}"/>
+                    <h:outputText value="#{butacaController.selected.fila}" title="#{bundle.ViewButacaTitle_fila}"/>
+                    <h:outputText value="#{bundle.ViewButacaLabel_salaCineid}"/>
+                    <h:outputText value="#{butacaController.selected.salaCineid}" title="#{bundle.ViewButacaTitle_salaCineid}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{butacaController.destroyAndView}" value="#{bundle.ViewButacaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewButacaEditLink}"/>
+                <br />
+                <h:commandLink action="#{butacaController.prepareCreate}" value="#{bundle.ViewButacaCreateLink}" />
+                <br />
+                <h:commandLink action="#{butacaController.prepareList}" value="#{bundle.ViewButacaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewButacaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

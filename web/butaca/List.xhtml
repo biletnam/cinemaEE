@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListButacaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListButacaEmpty}" rendered="#{butacaController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{butacaController.items.rowCount > 0}">
+                    <h:outputText value="#{butacaController.pagination.pageFirstItem + 1}..#{butacaController.pagination.pageLastItem + 1}/#{butacaController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{butacaController.previous}" value="#{bundle.Previous} #{butacaController.pagination.pageSize}" rendered="#{butacaController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{butacaController.next}" value="#{bundle.Next} #{butacaController.pagination.pageSize}" rendered="#{butacaController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{butacaController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListButacaTitle_butacaId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.butacaId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListButacaTitle_numButaca}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numButaca}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListButacaTitle_fila}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fila}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListButacaTitle_salaCineid}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.salaCineid}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{butacaController.prepareView}" value="#{bundle.ListButacaViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{butacaController.prepareEdit}" value="#{bundle.ListButacaEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{butacaController.destroy}" value="#{bundle.ListButacaDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{butacaController.prepareCreate}" value="#{bundle.ListButacaCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListButacaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

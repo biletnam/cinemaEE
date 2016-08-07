@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListSnackTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListSnackEmpty}" rendered="#{snackController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{snackController.items.rowCount > 0}">
+                    <h:outputText value="#{snackController.pagination.pageFirstItem + 1}..#{snackController.pagination.pageLastItem + 1}/#{snackController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{snackController.previous}" value="#{bundle.Previous} #{snackController.pagination.pageSize}" rendered="#{snackController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{snackController.next}" value="#{bundle.Next} #{snackController.pagination.pageSize}" rendered="#{snackController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{snackController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSnackTitle_snackId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.snackId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSnackTitle_nombre}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombre}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSnackTitle_tamano}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tamano}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSnackTitle_precio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.precio}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{snackController.prepareView}" value="#{bundle.ListSnackViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{snackController.prepareEdit}" value="#{bundle.ListSnackEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{snackController.destroy}" value="#{bundle.ListSnackDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{snackController.prepareCreate}" value="#{bundle.ListSnackCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListSnackIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

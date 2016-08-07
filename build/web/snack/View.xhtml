@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewSnackTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewSnackLabel_snackId}"/>
+                    <h:outputText value="#{snackController.selected.snackId}" title="#{bundle.ViewSnackTitle_snackId}"/>
+                    <h:outputText value="#{bundle.ViewSnackLabel_nombre}"/>
+                    <h:outputText value="#{snackController.selected.nombre}" title="#{bundle.ViewSnackTitle_nombre}"/>
+                    <h:outputText value="#{bundle.ViewSnackLabel_tamano}"/>
+                    <h:outputText value="#{snackController.selected.tamano}" title="#{bundle.ViewSnackTitle_tamano}"/>
+                    <h:outputText value="#{bundle.ViewSnackLabel_precio}"/>
+                    <h:outputText value="#{snackController.selected.precio}" title="#{bundle.ViewSnackTitle_precio}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{snackController.destroyAndView}" value="#{bundle.ViewSnackDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewSnackEditLink}"/>
+                <br />
+                <h:commandLink action="#{snackController.prepareCreate}" value="#{bundle.ViewSnackCreateLink}" />
+                <br />
+                <h:commandLink action="#{snackController.prepareList}" value="#{bundle.ViewSnackShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewSnackIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
