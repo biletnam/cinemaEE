@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Snacks</title>
+    </h:head>
+    <h:body style= 'background: url(./images/Cinema.jpg); background-position: center, center; background-size: cover;'>
+        <h:form>
+            <p:graphicImage  height="300" width="600" value="./images/snack.png" style="margin-left: -20; margin-top: 1" /> 
+            <div id="texto" style="width: 60%;height: 100px; float: right;margin: 20px; margin-top: 160px;margin-right: 50px">
+                <h:outputText value="Reserva tus boletos y snacks favoritos desde la comodidad de tu casa" style="font-size: 1.5em;width: 900px;height: 100px; color: white;font-weight: bold;font-style: oblique"></h:outputText>
+            </div>
+
+            <div id="pantalla" style="width: 90%; border: 20%;margin: auto">
+                <div id="menu" style=" float: left; ;margin: auto; margin:20px; background-color:  #00b386; margin-bottom: 100px">
+                    <p:breadCrumb style=" background-color: #ffffe6; margin-top: 5px;">
+                        <p:menuitem value="Categories" url=""/>
+                        <p:menuitem value="Home" url="./index.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px"/>
+                        <p:menuitem value="Cartelera" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;;margin-top: 9px  "   />
+                        <p:menuitem value="Próximos estrenos" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;;margin-top: 9px   " />
+                        <p:menuitem value="Snacks disponibles" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px ;margin-top: 9px  "  />
+                        <p:menuitem value="Quienes somos"     url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px   " />
+                    </p:breadCrumb>
+                </div> 
+
+                <h:outputText value=" Disfruta de todos nuestros snacks y adquieros aqui mismo." style="float: left; margin: auto; font-size: 1.5em; margin-left: 10px;width: 90%;height: 100px; color: white;font-weight: bold; margin-top: 10px;font-style: oblique"></h:outputText>
+
+                <h:form style="margin-top: 50px; ">
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:fieldset legend="Super Combo 1" style="margin-top:50px; width: 85%;margin-left: 15px">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:graphicImage name="combo-1.jpg"  library="images/snacks"/>
+                            <h:outputText
+                                value="Prueba el super combo 1:                                                             
+
+
+                                Bebida 44 Oz. + Canguil grande.           " />
+                        </h:panelGrid>
+                    </p:fieldset>
+
+
+                </h:form>
+
+
+
+
+                <h:form style="margin-top: 50px; ">
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:fieldset legend="Super Combo 2" style="margin-top:50px; width: 85%;margin-left: 15px">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:graphicImage name="combo-2.jpg"  library="images/snacks"/>
+                            <h:outputText
+                                value="Prueba el super combo 2:                                                             
+
+                                Bebida 22 Oz. + Hot Dog.        " />
+                        </h:panelGrid>
+                    </p:fieldset>
+
+
+                </h:form>
+
+                <h:form style="margin-top: 50px; ">
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:fieldset legend="Super Combo 3" style="margin-top:50px; width: 85%;margin-left: 15px">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:graphicImage name="combo-3.jpg"  library="images/snacks"/>
+                            <h:outputText
+                                value=" Disfrutalo con tu pelicula favorita: Bebida 22 Oz. + Nachos con queso o carne."/>
+                        </h:panelGrid>
+                    </p:fieldset>
+
+
+                </h:form>
+
+                <h:form style="margin-top: 50px; ">
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:fieldset legend="Super Combo 4" style="margin-top:50px; width: 85%;margin-left: 15px">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:graphicImage name="combo-4.jpg"  library="images/snacks"/>
+                            <h:outputText
+                                value="Vale la pena probarlo: A) 2 Bebidas de 22 Oz. + Nachos con queso o carne + 1 Hot dog.&nbsp;&nbsp;
+                                B) 2 Bebidas de 22 Oz. + 2 Nachos con queso o carne.
+                                C) 2 Bebidas de 22 Oz. + 2 Hot " />
+                        </h:panelGrid>
+                    </p:fieldset>
+
+
+                </h:form>
+
+                <h:form style="margin-top: 50px; ">
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:fieldset legend="Super Combo 5" style="margin-top:50px; width: 85%;margin-left: 15px">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:graphicImage name="combo-5.jpg"  library="images/snacks"/>
+                            <h:outputText
+                                value="Te encantarán:    A) 2 Bebidas de 22 Oz. + 1 Canguil mediano + 1 Hot dog.
+                                B) 2 Bebidas de 22 Oz. + 1 Canguil mediano + 1 Nachos con queso o carne." />
+                        </h:panelGrid>
+                    </p:fieldset>
+
+
+                </h:form>
+                
+                <h:form style="margin-top: 50px; ">
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:fieldset legend="Super Combo Familiar" style="margin-top:50px; width: 85%;margin-left: 15px">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:graphicImage name="combo-familiar.jpg"  library="images/snacks"/>
+                            <h:outputText
+                                value="Disfrutalo con tu familia:   2 Bebidas de 22 Oz. + 2 Canguiles medianos + 2 Dulces (Nivel 2)." />
+                        </h:panelGrid>
+                    </p:fieldset>
+
+
+                </h:form>
+
+
+            </div>
+        </h:form>
+    </h:body>
+</html>
+
