@@ -28,6 +28,7 @@ public class UsuarioController implements Serializable {
     private com.edalx.session.UsuarioFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
+    
 
     public UsuarioController() {
     }

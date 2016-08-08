@@ -19,23 +19,23 @@
             <h:outputText value="Reserva tus boletos y snacks favoritos desde la comodidad de tu casa" style="font-size: 1.5em;width: 900px;height: 100px; color: white;font-weight: bold;font-style: oblique"></h:outputText>
 
         </div>
-        
+
         <div id="pantalla" style="width: 90%; border: 20%;margin: auto">
-                <div id="menu" style=" float: left; ;margin: auto; margin:20px; background-color:  #00b386">
-                    <p:breadCrumb style=" background-color: #ffffe6; margin-top: 5px;">
-                        <p:menuitem value="Categories" url="#"/>
-                        <p:menuitem value="Home" url="../index.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px"/>
-                        <p:menuitem value="Cartelera" url="../Cartelera.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px;;margin-top: 9px  "   />
-                        <p:menuitem value="Próximos estrenos" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;;margin-top: 9px   " />
-                        <p:menuitem value="Snacks disponibles" url="../Snacks.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px ;margin-top: 9px  "  />
-                        <p:menuitem value="Quienes somos"     url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px   " />
-                    </p:breadCrumb>
-                </div> 
+            <div id="menu" style=" float: left; ;margin: auto; margin:20px; background-color:  #00b386">
+                <p:breadCrumb style=" background-color: #ffffe6; margin-top: 5px;">
+                    <p:menuitem value="Categories" url="#"/>
+                    <p:menuitem value="Home" url="../index.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px"/>
+                    <p:menuitem value="Cartelera" url="../Cartelera.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px;;margin-top: 9px  "   />
+                    <p:menuitem value="Próximos estrenos" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;;margin-top: 9px   " />
+                    <p:menuitem value="Snacks disponibles" url="../Snacks.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px ;margin-top: 9px  "  />
+                    <p:menuitem value="Quienes somos"     url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px   " />
+                </p:breadCrumb>
+            </div> 
             <div id="menu1" style=" float: left; margin: auto;margin-left: 2%; margin-top:100px; height:30px;; vertical-align: middle; padding: 5px">
-            <h:outputText value="Registrate y sé parte de la familia" style="font-size: 1.5em;width: 900px;height: 20px; color: white;margin-top: 5px;font-weight: bold;font-style: oblique"></h:outputText>
+                <h:outputText value="Registrate y sé parte de la familia" style="font-size: 1.5em;width: 900px;height: 20px; color: white;margin-top: 5px;font-weight: bold;font-style: oblique"></h:outputText>
+            </div>
         </div>
-        </div>
-        
+
         <div style=" float: left; margin-left: 8%; margin-top:100px;font-size: 1.3em; color: #00b386;font-weight: bold;height:200px; width: 40%; vertical-align: middle; padding: 5px; align-content: center; ">
             <h:form>
                 <h:panelGrid columns="2">
@@ -49,6 +49,8 @@
                     <h:inputText id="usrCi" value="#{usuarioController.selected.usrCi}" title="#{bundle.CreateUsuarioTitle_usrCi}" />
                     <h:outputLabel value="*Contraseña: "/>
                     <p:password id="password" value="#{usuarioController.selected.password}" title="#{bundle.CreateUsuarioTitle_password}" style="height: 15px; width: 165px" />
+                    <h:outputLabel value="Admin: "/>
+                    <h:inputText id="usrAdmin" value="#{usuarioController.selected.admin}" title="#{bundle.CreateUsuarioTitle_usrCi}" />
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{usuarioController.create}" value="#{bundle.CreateUsuarioSaveLink}" style="height: 100px; width: 250px;color: white; background-color: #009999;  font-weight: bold; margin-top: 20px; padding: 10px" />
