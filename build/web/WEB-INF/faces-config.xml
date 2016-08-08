@@ -15,6 +15,10 @@
             <from-outcome>sucess</from-outcome>
             <to-view-id>/success.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>AdminSucess</from-outcome>
+            <to-view-id>/AdminSucess.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/success.xhtml</from-view-id>

@@ -3,41 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
-    <ui:composition template="/template.xhtml">
-        <ui:define name="title">
-            <h:outputText value="#{bundle.CreatePeliculaTitle}"></h:outputText>
-        </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
+    <h:head>
+        <title>Compra de boletos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    </h:head>
+
+    <h:body  style='background-color: black; background: url(../images/Cinema.jpg); background-position: center, center;  background-repeat: no-repeat; background-size: cover;'> 
+        <p:graphicImage library="images" name="snack.png" id="image" style="width: 670px; height: 370px; margin: 10px" />
+
+        <div id="texto" style="width: 900px;height: 100px; float: right;margin: 20px; margin-top: 160px">
+            <h:outputText value="Reserva tus boletos y snacks favoritos desde la comodidad de tu casa" style="font-size: 1.5em;width: 900px;height: 100px; color: white;font-weight: bold;font-style: oblique"></h:outputText>
+
+        </div>
+
+        <div id="pantalla" style="width: 90%; border: 20%;margin: auto">
+            <div id="menu" style=" float: left; ;margin: auto; margin:20px; background-color:  #00b386">
+                <p:breadCrumb style=" background-color: #ffffe6; margin-top: 5px;">
+                    <p:menuitem value="Categories" url="#"/>
+                    <p:menuitem value="Home" url="../AdminSucess.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px"/>
+                    <p:menuitem value="Crear Snacks" url="../snack/Create.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px;;margin-top: 9px  "   />
+                    <p:menuitem value="Crear Peliculas" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px ;margin-top: 9px  "  />
+                    <p:menuitem value="Revisar Boletos" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px ;margin-top: 9px  "  />
+                    <p:menuitem value="Revisar Snacks"  url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px   " />
+                </p:breadCrumb>
+            </div>
+            <div id="menu1" style=" float: left; margin: auto;margin-left: 2%; margin-top:100px; height:30px;; vertical-align: middle; padding: 5px">
+                <h:outputText value="Ingrese cada uno de los campos para crear la pelicula: " style="font-size: 1.5em;width: 900px;height: 20px; color: white;margin-top: 5px;font-weight: bold;font-style: oblique"></h:outputText>
+                <br/>
+            </div>
+        </div>
+
+        <div style=" float: left; margin-left: 8%; margin-top:100px;font-size: 1.3em; color: #990033;font-weight: bold;height:200px; width: 40%; vertical-align: middle; padding: 5px; align-content: center; ">
+
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreatePeliculaLabel_peliculaId}" for="peliculaId" />
+                    <h:outputLabel value="Pelicula ID: " style="background-color: white"/>
                     <h:inputText id="peliculaId" value="#{peliculaController.selected.peliculaId}" title="#{bundle.CreatePeliculaTitle_peliculaId}" required="true" requiredMessage="#{bundle.CreatePeliculaRequiredMessage_peliculaId}"/>
-                    <h:outputLabel value="#{bundle.CreatePeliculaLabel_nombre}" for="nombre" />
+                    <h:outputLabel value="Nombre: " style="background-color: white" />
                     <h:inputText id="nombre" value="#{peliculaController.selected.nombre}" title="#{bundle.CreatePeliculaTitle_nombre}" />
-                    <h:outputLabel value="#{bundle.CreatePeliculaLabel_duracion}" for="duracion" />
-                    <h:inputTextarea rows="4" cols="30" id="duracion" value="#{peliculaController.selected.duracion}" title="#{bundle.CreatePeliculaTitle_duracion}" />
-                    <h:outputLabel value="#{bundle.CreatePeliculaLabel_sinopsis}" for="sinopsis" />
-                    <h:inputText id="sinopsis" value="#{peliculaController.selected.sinopsis}" title="#{bundle.CreatePeliculaTitle_sinopsis}" />
-                    <h:outputLabel value="#{bundle.CreatePeliculaLabel_estreno}" for="estreno" />
+                    <h:outputLabel value="Sinopsis: " style="background-color: white"/>
+                    <h:inputText id="sinopsis" value="#{peliculaController.selected.sinopsis}" title="#{bundle.CreatePeliculaTitle_sinopsis}" style="height: 200px; width: 400px"/>
+                    <h:outputLabel value="Director: "  style="background-color: white"/>
                     <h:inputText id="estreno" value="#{peliculaController.selected.estreno}" title="#{bundle.CreatePeliculaTitle_estreno}" />
-                    <h:outputLabel value="#{bundle.CreatePeliculaLabel_portada}" for="portada" />
+                    <h:outputLabel value="Categoria: " style="background-color: white"/>
                     <h:inputText id="portada" value="#{peliculaController.selected.portada}" title="#{bundle.CreatePeliculaTitle_portada}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{peliculaController.create}" value="#{bundle.CreatePeliculaSaveLink}" />
+                <h:commandLink action="#{peliculaController.create}" value="#{bundle.CreatePeliculaSaveLink}" style="height: 100px; width: 250px;color: white; background-color: #009999;  font-weight: bold; margin-top: 20px; padding: 10px" />
                 <br />
-                <br />
-                <h:commandLink action="#{peliculaController.prepareList}" value="#{bundle.CreatePeliculaShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreatePeliculaIndexLink}"/>
+                
             </h:form>
-        </ui:define>
-    </ui:composition>
-
+       </div>
+    </h:body>
 </html>

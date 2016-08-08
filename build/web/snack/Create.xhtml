@@ -19,47 +19,41 @@
             <h:outputText value="Reserva tus boletos y snacks favoritos desde la comodidad de tu casa" style="font-size: 1.5em;width: 900px;height: 100px; color: white;font-weight: bold;font-style: oblique"></h:outputText>
 
         </div>
-        
+
         <div id="pantalla" style="width: 90%; border: 20%;margin: auto">
-                <div id="menu" style=" float: left; ;margin: auto; margin:20px; background-color:  #00b386">
-                    <p:breadCrumb style=" background-color: #ffffe6; margin-top: 5px;">
+            <div id="menu" style=" float: left; ;margin: auto; margin:20px; background-color:  #00b386">
+                <p:breadCrumb style=" background-color: #ffffe6; margin-top: 5px;">
                     <p:menuitem value="Categories" url="#"/>
-                    <p:menuitem value="Home" url="../success.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px"/>
-                    <p:menuitem value="Cartelera" url="../Cartelera_1.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px;;margin-top: 9px  "   />
-                    <p:menuitem value="Snacks disponibles" url="../Snacks_1.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px ;margin-top: 9px  "  />
-                    <p:menuitem value="Compra de Boletos" url="../boleto/Create.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px ;margin-top: 9px  "  />
-                    <p:menuitem value="Compra de Snacks"     url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px   " />
+                    <p:menuitem value="Home" url="../AdminSucess.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px"/>
+                    <p:menuitem value="Crear Snacks" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;;margin-top: 9px  "   />
+                    <p:menuitem value="Crear Peliculas" url="../pelicula/Create.xhtml" style="width: 265px; text-align: center;color: #990033;height: 25px ;margin-top: 9px  "  />
+                    <p:menuitem value="Revisar Boletos" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px ;margin-top: 9px  "  />
+                    <p:menuitem value="Revisar Snacks"  url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px   " />
                 </p:breadCrumb>
-                </div> 
+            </div>
             <div id="menu1" style=" float: left; margin: auto;margin-left: 2%; margin-top:100px; height:30px;; vertical-align: middle; padding: 5px">
-                <h:outputText value="Tus compras serán debidas de tu tarjeta registrada: " style="font-size: 1.5em;width: 900px;height: 20px; color: white;margin-top: 5px;font-weight: bold;font-style: oblique"></h:outputText>
-               <br/>
-                <h:outputText value="El campo función lo puedes encontrar en la sección cartelera" style="font-size: 1.5em;width: 900px;height: 20px; color: white;margin-top: 5px;font-weight: bold;font-style: oblique"></h:outputText>
+                <h:outputText value="Ingrese cada uno de los campos para crear el snack: " style="font-size: 1.5em;width: 900px;height: 20px; color: white;margin-top: 5px;font-weight: bold;font-style: oblique"></h:outputText>
+                <br/>
+            </div>
         </div>
-        </div>
-        
-                <div style=" float: left; margin-left: 8%; margin-top:100px;font-size: 1.3em; color: #990033;font-weight: bold;height:200px; width: 40%; vertical-align: middle; padding: 5px; align-content: center; ">
+
+        <div style=" float: left; margin-left: 8%; margin-top:100px;font-size: 1.3em; color: #990033;font-weight: bold;height:200px; width: 40%; vertical-align: middle; padding: 5px; align-content: center; ">
 
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateSnackLabel_snackId}" for="snackId" />
+                    <h:outputLabel value="#{bundle.CreateSnackLabel_snackId}" for="snackId" style="background-color: white" />
                     <h:inputText id="snackId" value="#{snackController.selected.snackId}" title="#{bundle.CreateSnackTitle_snackId}" required="true" requiredMessage="#{bundle.CreateSnackRequiredMessage_snackId}"/>
-                    <h:outputLabel value="#{bundle.CreateSnackLabel_nombre}" for="nombre" />
+                    <h:outputLabel value="#{bundle.CreateSnackLabel_nombre}" for="nombre" style="background-color: white"/>
                     <h:inputText id="nombre" value="#{snackController.selected.nombre}" title="#{bundle.CreateSnackTitle_nombre}" />
-                    <h:outputLabel value="#{bundle.CreateSnackLabel_tamano}" for="tamano" />
+                    <h:outputLabel value="#{bundle.CreateSnackLabel_tamano}" for="tamano" style="background-color: white" />
                     <h:inputText id="tamano" value="#{snackController.selected.tamano}" title="#{bundle.CreateSnackTitle_tamano}" />
-                    <h:outputLabel value="#{bundle.CreateSnackLabel_precio}" for="precio" />
+                    <h:outputLabel value="#{bundle.CreateSnackLabel_precio}" for="precio" style="background-color: white"/>
                     <h:inputText id="precio" value="#{snackController.selected.precio}" title="#{bundle.CreateSnackTitle_precio}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{snackController.create}" value="#{bundle.CreateSnackSaveLink}" />
+                <h:commandLink action="#{snackController.create}" value="#{bundle.CreateSnackSaveLink}" style="height: 100px; width: 250px;color: white; background-color: #009999;  font-weight: bold; margin-top: 20px; padding: 10px"/>
                 <br />
-                <br />
-                <h:commandLink action="#{snackController.prepareList}" value="#{bundle.CreateSnackShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateSnackIndexLink}"/>
             </h:form>
-         </div>
-      </h:body>
+        </div>
+    </h:body>
 </html>
